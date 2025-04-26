@@ -1,0 +1,6 @@
+__pycache__
+resumes/
+venv/
+*.zip
+*.txt
+*.lab
