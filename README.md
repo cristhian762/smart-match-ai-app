@@ -12,17 +12,29 @@ Criei o ambiente virtual e instale as dependências do projeto:
 python -m venv venv/
 source venv/bin/activate
 pip install -r requirements.txt
-pip install uvicorn
 ```
 
 Baixe os currículos base para o banco de dados vetorial, crie uma pasta e descompacte o zip:
 
 ```bash
 wget https://github.com/florex/resume_corpus/raw/refs/heads/master/resumes_corpus.zip
-mkdir resumes
-unzip resumes_corpus.zip -d resumes/ 
+mkdir -p resumes/original
+unzip resumes_corpus.zip -d resumes/original
 rm resumes_corpus.zip
 ```
+
+
+Rode o script `filtered.py` para descartar os currículo inválidos:
+
+```bash
+python scripts/filtered.py
+```
+
+Rode o script `chroma.py` para gerar os bancos de dados vetoriais: 
+
+```bash
+python scripts/chroma.py
+`
 
 Run: 
 ```bash
